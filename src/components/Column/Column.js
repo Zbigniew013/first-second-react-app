@@ -9,7 +9,6 @@ const Column = props => {
     state.cards.filter(card => 
       card.columnId === props.id));
 
-
   return (
     <article className={styles.column}>
       <h2 className={styles.title}>
@@ -22,7 +21,7 @@ const Column = props => {
           key={card.id} 
           title={card.title} />)}
       </ul>
-      <CardForm columnId={props.id} action={props.action} />
+      <CardForm columnId={props.id} />
     </article>
   )
 };

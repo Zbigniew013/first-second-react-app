@@ -1,7 +1,6 @@
 import styles from './List.module.scss';
 import Column from '../Column/Column';
 import ColumnForm from '../ColumnForm/ColumnForm';
-import CardForm from '../CardForm/CardForm';
 import { useSelector} from 'react-redux';
 
 const List = () => {
@@ -23,7 +22,6 @@ const List = () => {
           )}
         </section>
         <ColumnForm />
-        {/* <CardForm /> */}
       </div>
   )
 
