@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import styles from './CardForm.module.scss';
 import { useDispatch } from 'react-redux';
+import { addCard } from '../../redux/store';
 
 
 const CardForm = (props) => {
@@ -14,14 +15,12 @@ const CardForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch({ type: 'ADD_CARD', 
-      payload: { id: Math.random().toString(), 
+    dispatch(addCard ({ id: Math.random().toString(), 
         title: enteredCard, 
-        columnId } });
+        columnId } ));
     setEnteredCard('');
-
   }
-
+  
   const cardChangeHandler = (event) => {
     setEnteredCard(event.target.value);
     console.log(event.target.value);
