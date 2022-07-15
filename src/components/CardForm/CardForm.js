@@ -19,6 +19,7 @@ const CardForm = (props) => {
         title: enteredCard, 
         columnId } });
     setEnteredCard('');
+
   }
 
   const cardChangeHandler = (event) => {
