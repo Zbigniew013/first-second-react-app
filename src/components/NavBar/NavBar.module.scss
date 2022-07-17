@@ -1,6 +1,9 @@
 @import '../../styles/settings.scss';
 @import '../../styles/global.scss';
 
+$color-dark: #2f3542;
+$color-warning: #e1644e;
+
 .icon {
   font-size: 24px;
 }
@@ -24,6 +27,8 @@
   padding: 0;
   display: flex;
   align-items: center;
+  text-decoration: none;
+
 }
 
 .nav li {
@@ -31,16 +36,18 @@
   margin-left: 2rem;
 }
 
-.nav a {
+a {
   color: $color-light;
   text-decoration: none;
+}
+
+
+
+.linkActive {
+  color: $color-warning;
 }
 
 // .nav a:hover,
 // .nav a:active {
 //   color: #767477;
-// }
-
-// .linkActive {
-//   color: $color-warning;
 // }
