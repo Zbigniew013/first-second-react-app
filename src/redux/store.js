@@ -19,6 +19,7 @@ export const getAllLists = state => state.lists;
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 export const addCard = payload => ({ type: 'ADD_CARD', payload });
 export const updateSearchString = payload => ({ type: 'UPDATE_SEARCHSTRING', payload });
+export const addNewList = payload => ({ type: 'ADD_NEW_LIST', payload });
 
 
 const reducer = (state, action) => {
@@ -30,7 +31,10 @@ const reducer = (state, action) => {
       return { ...state, cards: [...state.cards, action.payload ]};
 
     case 'UPDATE_SEARCHSTRING':
-      return { ...state, searchString: action.payload };  
+      return { ...state, searchString: action.payload };
+      
+    case 'ADD_NEW_LIST':
+      return { ...state, lists: [...state.lists, action.payload]};
 
     default:
       return state;

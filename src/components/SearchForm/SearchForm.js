@@ -1,7 +1,7 @@
 import styles from './SearchForm.module.scss';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateSearchString } from '../../redux/store';
 
@@ -21,6 +21,11 @@ const SearchForm = () => {
     setEnteredSearch(event.target.value);
     console.log(event.target.value);
   };
+
+  useEffect(() => {
+    dispatch(updateSearchString(''));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
       <form className={styles.searchForm} onSubmit={handleSubmit} >

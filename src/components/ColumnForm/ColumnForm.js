@@ -5,9 +5,11 @@ import TextInput from '../TextInput/TextInput';
 import { useDispatch } from 'react-redux';
 import { addColumn } from '../../redux/store';
 
-const ColumnForm = () => {
+const ColumnForm = (props) => {
+
 
   const dispatch = useDispatch();
+  const listId = props.listId;
 
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredIcon, setEnteredIcon] = useState('');
@@ -16,7 +18,8 @@ const ColumnForm = () => {
     event.preventDefault();
     dispatch(addColumn ({ id: Math.random().toString(), 
         title: enteredTitle, 
-        icon: enteredIcon } ));
+        icon: enteredIcon,
+        listId } ));
     setEnteredTitle('');
     setEnteredIcon('');
   }
